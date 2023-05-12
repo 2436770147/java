@@ -11,10 +11,12 @@ public class Test0405 {
         System.out.println();
         System.out.println();
 
-        //Integer值在-128~127之间是值比较
+        //Integer值在-128~127之间是值比较，Integer跟int也是值比较（自动拆装箱机制）
         Integer i=-128;
         Integer j=-128;
+        int x=-128;
         System.out.println(i==j);
+        System.out.println(i==x);
     }
 
     private static void function(StringBuffer x, StringBuffer y) {
