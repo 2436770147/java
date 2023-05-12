@@ -145,9 +145,9 @@ List、Set、Map都是线程不安全的，因为它们的add()、put()都没有
 其实底层还是用的HashMap的put()，但这里只关心key，至于value用的是Object常量
 
 CountDownLatch、CyclicBarrier、Semaphore有什么区别？
-CountDownLatch：递减计数，用于最后一个子线程执行完再执行父线程；
-CyclicBarrier：累加计数，用于最后一个线程执行完再统一执行；
-Semaphore用于1、共享资源的互斥、2、并发量的控制
+CountDownLatch：做递减计数，用于在规定数量子线程执行完后再执行父线程；
+CyclicBarrier：做累加计数，用于在规定数量线程执行完再统一执行；
+Semaphore：信号量，用于共享资源互斥和并发量控制，底层用了AQS的共享锁
 
 什么是BlockingQueue？
 BlockingQueue是阻塞队列，常用的有ArrayBlockingQueue数组有界阻塞队列、
@@ -178,8 +178,8 @@ handler：拒绝策略，队列满时且工作线程大于最大同时执行线�
 策略，相反如果并发降下来了，按照非核心线程存活时间，关闭非核心线程
 
 ThreadPoolExecutor线程池4大拒绝策略
-AbortPolicy拒绝策略（默认）：抛出拒绝执行异常，且停止执行；
-CallerRunsPolicy调用者执行策略：把任务交给父线程执行；
-DiscardOldestPolicy抛弃等待最久任务策略：抛弃队列中等待最久的任务并将当前任务加入队列尝试再次提交；
-DiscardPolicy抛弃策略：丢弃任务，不处理也不抛异常
+AbortPolicy（默认）：抛出拒绝执行异常停止执行；
+CallerRunsPolicy：调用者执行策略，将任务交给父线程执行；
+DiscardOldestPolicy：抛弃队列等待最久的任务，并将当前任务添加到队列尝试再次执行；
+DiscardPolicy：直接抛弃任务，不执行也不抛异常
 
