@@ -64,8 +64,9 @@ pageContext、request、session、application、response、out、config、page
 是将依赖的对象实例交给spring帮我们注入，用set()方法注入、构造方法注入、@Autowired自动注入
 
 linux命令
-除了基本的文件、文件夹的增删改命令之外，比较常用的有cat、tail查看日志、nohup java -jar不挂断式启动程序、ps查看进程、kill关进程、
-centos7的systemctl status、systemctl start、systemctl restart、systemctl stop对一些服务的操作
+常用的有cat、tail -f查看日志、nohup java -jar非挂断式启动程序、jps查看进程id、kill -9关进程、
+jinfo -flags查看JVM参数配置、jstack查看进程堆栈信息、top查看系统的CPU、内存占用和负载均衡、
+free -m查看内存、df -h查看磁盘
 
 针对高并发高可用的处理方式
 日志溯源寻找瓶颈、业务拆分、硬件扩容
