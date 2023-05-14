@@ -7,7 +7,8 @@ import java.util.concurrent.*;
 //懒加载单例+线程安全
 public class LazySingleton {
 
-    private static LazySingleton instance = null;
+    //添加volatile禁止指令重排
+    private static volatile LazySingleton instance = null;
 
     private LazySingleton(){}
 
