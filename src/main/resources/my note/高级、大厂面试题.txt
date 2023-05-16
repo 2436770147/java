@@ -183,3 +183,27 @@ CallerRunsPolicy：调用者执行策略，将任务交给父线程执行；
 DiscardOldestPolicy：抛弃队列等待最久的任务，并将当前任务添加到队列尝试再次执行；
 DiscardPolicy：直接抛弃任务，不执行也不抛异常
 
+Redis基本类型
+String：可用于手机验证码的存取、分布式锁；
+Hash：在Java中的泛型是Map<String,Map<Object,Object>>，可用于购物车场景搜集产品信息；
+List：与Java的List不同，这里是一个双向链表，可以向左写入和向右写入，可以用于微信订阅公众号场景；
+Set：它的取随机值命令可用于抽奖场景、自增自减命令可用于微信朋友圈点赞场景、取交集命令可用于微博好友共同关注、
+取差集命令可用于QQ推荐可能认识的人
+Zset：支持排序，可用于商品销量排序展示、热搜展示
+
+Redis内存查看和设置
+使用config get maxmemory和config set maxmemory查看和设置Redis内存，默认是0,0表示在64为操作系统中不限大小
+
+Redis内存淘汰策略设置和查看
+使用config get maxmemory-policy和config set maxmemory-policy查看和设置内存淘汰策略，默认是noeviction策略不删除key，
+容易触发OOM，一般设置的话会选择allkeys-lru策略删除最久未使用的key
+
+Redis过期键删除策略
+定时删除：设置过期时间；
+惰性删除：类似于懒加载，手动删除；
+定期删除：在规定时间间隔内随机删除部分过期键
+
+LRU算法实现方式
+通过继承LinkedHashMap，底层有删除最久没有使用的key方法；
+通过HashMap+DoubleLinkedList，类似于AQS的机制，Map构建节点，双向链表存放节点
+
