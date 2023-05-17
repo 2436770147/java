@@ -199,11 +199,11 @@ Redis内存淘汰策略设置和查看
 容易触发OOM，一般设置的话会选择allkeys-lru策略删除最久未使用的key
 
 Redis过期键删除策略
-定时删除：设置过期时间；
-惰性删除：类似于懒加载，手动删除；
+定时删除：设置过期时间，CPU开销大；
+惰性删除：类似于懒加载，手动删除，内存开销大；
 定期删除：在规定时间间隔内随机删除部分过期键
 
 LRU算法实现方式
-通过继承LinkedHashMap，底层有删除最久没有使用的key方法；
+通过继承LinkedHashMap，重写removeEldestEntry()；
 通过HashMap+DoubleLinkedList，类似于AQS的机制，Map构建节点，双向链表存放节点
 
