@@ -120,7 +120,8 @@ synchronized是关键字，它属于JVM，自带正常释放和异常释放，�
 lock是JUC中locks包下的接口，lock需要手动释放锁；
 synchronized是非公平锁，lock支持公平锁和非公平锁，默认非公平锁；
 synchronized不可以中断被阻塞的线程；
-synchronized只支持随机唤醒线程，lock通过Condition接口可以精确唤醒线程
+synchronized只支持随机唤醒线程，lock通过Condition接口可以精确唤醒线程；
+synchronized是独占锁，lock支持独占锁和共享锁，写锁是独占锁，读锁是共享锁
 
 Condition接口
 Condition接口是JUC中locks包下的接口，通过它的await()/signal()可以精确唤醒线程
