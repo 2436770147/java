@@ -10,7 +10,7 @@ public class LRUTest extends LinkedHashMap {
     private int capacity;
 
     public LRUTest(int capacity) {
-        //调用父类的构造方法，(缓存容量、负载系数(默认0.75)、访问顺序：true：插入权重高；false：查询权重高)
+        //调用父类的构造方法，(缓存容量、负载系数(默认0.75)、访问顺序：true：访问权重高；false：插入权重高)
         super(capacity,0.75f,true);
         this.capacity=capacity;
     }
