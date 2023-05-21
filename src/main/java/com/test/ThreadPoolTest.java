@@ -47,7 +47,7 @@ public class ThreadPoolTest {
                 TimeUnit.SECONDS,//时间单位
                 new LinkedBlockingQueue<>(3),//任务队列
                 Executors.defaultThreadFactory(),//线程工厂
-                new ThreadPoolExecutor.DiscardPolicy());//拒绝策略
+                new ThreadPoolExecutor.DiscardOldestPolicy());//拒绝策略
                                                         //AbortPolicy（默认）：抛出拒绝执行异常，且停止执行；
                                                         //CallerRunsPolicy：调用者执行机制，把任务交给父线程执行；
                                                         //DiscardOldestPolicy：抛弃队列中等待最久的任务并将当前任务加入队列尝试再次提交；
@@ -58,11 +58,6 @@ public class ThreadPoolTest {
                 int j=i;
                 threadPoolExecutor.execute(()->{
                     System.out.println(Thread.currentThread().getName()+"\t"+j);
-                    try {
-                        Thread.sleep(3000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                 });
             }
         }catch (Exception e){
