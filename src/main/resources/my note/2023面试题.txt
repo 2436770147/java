@@ -189,7 +189,7 @@ Mybatis执行原理
 结果映射，最后返回java对象
 
 常用的集合有哪些？
-List：
+List（允许为空）：
 ArrayList数组集合，有序允许重复，查询快；
 LinkedList链表集合，无序不允许重复，增删快；
 Vector线程安全的数组集合
