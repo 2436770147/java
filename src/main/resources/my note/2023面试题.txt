@@ -185,7 +185,7 @@ SpringMVC执行原理
 最后返回给前端控制器
 
 Mybatis执行原理
-配置数据库连接信息，Mybatis通过SqlSessionFactory创建SqlSession，通过SqlSession执行SQL，Mybatis会进行参数映射和
+配置数据库连接信息后，Mybatis通过SqlSessionFactory创建SqlSession，通过SqlSession执行SQL，Mybatis会进行参数映射和
 结果映射，最后返回java对象
 
 常用的集合有哪些？
