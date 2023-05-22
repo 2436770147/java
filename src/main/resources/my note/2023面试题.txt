@@ -197,7 +197,7 @@ Set（不允许重复）：
 HashSet，HashMap结构不保证插入顺序；
 LinkedHashSet，HashSet+链表结构保证插入顺序；
 可以用Hashtable充当线程安全Set集合
-Map（key不允许重复，key/value允许为空）：
-HashMap，Hashtable结构不保证插入顺序；
-LinkedHashMap，HashMap+链表结构保证插入顺序或访问顺序；
+Map（key不允许重复）：
+HashMap，Hashtable结构不保证插入顺序，key/value允许为空；
+LinkedHashMap，HashMap+链表结构保证插入顺序或访问顺序，key/value允许为空；
 Hashtable、ConcurrentHashMap线程安全的Map集合
