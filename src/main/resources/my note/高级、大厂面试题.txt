@@ -133,7 +133,7 @@ ABA问题发生在当一个线程比另一个线程结束的要快的时候，�
 集合线程安全问题
 List、Set、Map都是线程不安全的，因为它们的add()、put()都没有synchronizeed
 解决线程不安全的办法有：
-1、List集合可以用Vector、Set集合可以用HashTable、Map集合可以用ConcurrentHashMap
+1、List集合可以用Vector、Set集合可以用Hashtable、Map集合可以用ConcurrentHashMap
 2、可以用Collections集合类的synchronizedList、synchronizedSet和synchronizedMap
 3、可以用写时复制方法
 

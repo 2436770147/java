@@ -180,3 +180,24 @@ NIO是相对于传统Stream流更高效的IO操作，ByteBuffer.allocateDirect()
 可重复读，当前事务多次查询同一条记录是一致的，解决了不可重复读，但可能发生幻读；
 串行化，事务串行执行，最高的隔离级别，同时解决了脏读、不可重复读和幻读
 
+SpringMVC执行原理
+客户端的请求会提交到前端控制器，它会根据请求的URL把请求交给对应的控制器，控制器执行方法后生成ModelAndView对象，
+最后返回给前端控制器
+
+Mybatis执行原理
+配置数据库连接信息，Mybatis通过SqlSessionFactory创建SqlSession，通过SqlSession执行SQL，Mybatis会进行参数映射和
+结果映射，最后返回java对象
+
+常用的集合有哪些？
+List：
+ArrayList数组集合，有序允许重复，查询快；
+LinkedList链表集合，无序不允许重复，增删快；
+Vector线程安全的数组集合
+Set（不允许重复）：
+HashSet，HashMap结构不保证插入顺序；
+LinkedHashSet，HashSet+链表结构保证插入顺序；
+可以用Hashtable充当线程安全Set集合
+Map（key不允许重复，key/value允许为空）：
+HashMap，Hashtable结构不保证插入顺序；
+LinkedHashMap，HashMap+链表结构保证插入顺序或访问顺序；
+Hashtable、ConcurrentHashMap线程安全的Map集合
