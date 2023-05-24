@@ -131,9 +131,8 @@ ABA问题发生在当一个线程比另一个线程结束的要快的时候，�
 用带版本号的原子对象引用AtomicStampReference可以解决ABA问题
 
 集合线程安全问题
-List、Set、Map都是线程不安全的，因为它们的add()、put()都没有synchronizeed
 解决线程不安全的办法有：
-1、List集合可以用Vector、Set集合可以用Hashtable、Map集合可以用ConcurrentHashMap
+1、List集合可以用Vector、Set集合可以用Hashtable、Map集合可以用Hashtable和ConcurrentHashMap
 2、可以用Collections集合类的synchronizedList、synchronizedSet和synchronizedMap
 3、可以用写时复制方法
 
@@ -146,7 +145,7 @@ List、Set、Map都是线程不安全的，因为它们的add()、put()都没有
 
 CountDownLatch、CyclicBarrier、Semaphore有什么区别？
 CountDownLatch：做递减计数，用于在规定数量子线程执行完后再执行父线程；
-CyclicBarrier：做累加计数，用于在规定数量线程执行完再统一执行；
+CyclicBarrier：做累加计数，用于在规定数量子线程执行完后再执行父线程；
 Semaphore：信号量，用于共享资源互斥和并发量控制，底层用了AQS的共享锁
 
 什么是BlockingQueue？

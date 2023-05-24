@@ -3,7 +3,7 @@ package com.test;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-//用于在每个线程执行完之后阻塞，当最后一个线程执行完之后再一起执行，递增统计
+//用于主线程等待所有子线程执行完成再执行，递增统计
 public class CyclicBarrierTest {
 
     public static void main(String[] args) {
