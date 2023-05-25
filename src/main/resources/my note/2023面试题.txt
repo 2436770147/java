@@ -201,3 +201,7 @@ Map（key不允许重复）：
 HashMap，Hashtable结构不保证插入顺序，key/value允许为空；
 LinkedHashMap，HashMap+链表结构保证插入顺序或访问顺序，key/value允许为空；
 Hashtable、ConcurrentHashMap线程安全的Map集合
+
+AOP执行顺序
+SpringBoot1（Spring4）：@Before>@After>@AfterReturning或@AfterThrowing；
+SpringBoot2（Spring5）：@Before>@AfterReturning或@AfterThrowing>@After；
