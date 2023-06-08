@@ -37,18 +37,19 @@
             </exclusions>
         </dependency>
 
-        <!--&lt;!&ndash;mybatis-plus&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>com.baomidou</groupId>-->
-            <!--<artifactId>mybatis-plus-boot-starter</artifactId>-->
-            <!--<version>3.3.1</version>-->
-        <!--</dependency>-->
+        <!--mybatis-plus-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.1</version>
+        </dependency>
 
-        <!--&lt;!&ndash;mysql依赖&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-        <!--</dependency>-->
+        <!--mysql依赖-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.46</version>
+        </dependency>
         <!--lombok用来简化实体类-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -64,6 +65,39 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>3.6.0</version>
+        </dependency>
+        <!--- Activiti依赖导入 -->
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring</artifactId>
+            <version>5.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-engine</artifactId>
+            <version>5.18.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-beans</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jackson-core-asl</artifactId>
+                    <groupId>org.codehaus.jackson</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-lang3</artifactId>
+                    <groupId>org.apache.commons</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-lang3</artifactId>
+                    <groupId>org.apache.commons</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>
