@@ -1,8 +1,8 @@
-﻿什么是JVM
+什么是JVM
 JVM是java虚拟机，通过ClassLoader类加载器加载成字节码文件，一次编译到处执行，跨平台性强
 
 简述一下JVM加载Class文件原理
-通过ClassLoader类加载器加载，有4种类加载器，当应用程序加载器加载类时，首先不会自己去加载，而是向上询问是否已加载，
+通过ClassLoader类加载器加载，当应用程序加载器加载类时，首先不会自己去加载，而是向上询问是否已加载，
 即双亲委派机制
 
 4大类加载器
@@ -59,7 +59,7 @@ JVM常用XX参数
 -XX:ThreadStackSize（-Xss）：设置线程栈大小，默认值是0，0表示JDK为系统（Linux、macOS或Windows）设置的默认大小是1024kb
 -XX:MaxDirectMemorySize：设置最大直接内存大小；
 -XX:+UseG1GC：设置为G1垃圾回收器；
--Xmn：设置设置年轻代大小，默认堆内存的1/3；
+-Xmn：设置年轻代大小，默认堆内存的1/3；
 -XX:SurvivorRatio：设置Eden区在年轻代的比例，默认8:1:1；
 -XX:NewRatatio：设置老年代在堆内存的比例，默认2:1
 通过Idea终端jps命令和jinfo命令查看参数值
@@ -87,12 +87,12 @@ ulimit -u命令查看线程数上限
 虚引用：PhantomReference和ReferenceQueue联合使用，发生GC会被放入引用队列
 软、弱引用可用于高速缓存场景，既保证了读取速度又不占内存
 
-常见的错误有哪些？
+常见的错误、异常有哪些？
 StackOverflowError：栈溢出；
 OOM类错误：
 java heap space堆内存不足、
 Metaspace元空间不足、
-GC overhead limit exceeded过度垃圾回收（垃圾回占用98%资源）、
+GC overhead limit exceeded过度垃圾回收（垃圾回收占用98%资源）、
 Direct buffer memory直接内存不足、
 unable to create new native thread线程创建超出系统限制
 
@@ -117,14 +117,14 @@ CAS是比较并交换，非阻塞的同步实现方式，是unsafe类的方法�
 
 为什么用CAS而不用synchronized？
 因为synchronized虽然保证了数据的原子性，但是它性能低于CAS，CAS不用上锁，通过循环判断
-（自旋）来保证数据原子性，因为是自旋，避免了频繁的唤醒线程和避免阻塞，所以提高了性能，
+（自旋）来保证数据原子性，因为是自旋，避免了频繁的唤醒线程和阻塞，所以提高了性能，
 但循环时间长了会增加CPU消耗
 
 CAS缺点
 循环时间长的话CPU开销大、只能保证一个数据的原子性
 
 什么是ABA问题？
-ABA问题发生在当一个线程比另一个线程结束的要快的时候，这个更快结束的线程就能修改一次数据再改回去，这个时候另一个县城正好
+在使用CAS同步时，当一个线程比另一个线程结束的要快的时候，这个更快结束的线程就能修改一次数据再改回去，这个时候另一个线程正好
 到修改这一步，发现值没变，于是顺利修改，但其实值是做过修改的，这种情况有些场景可能不希望发生
 
 怎么解决ABA问题？
@@ -191,7 +191,7 @@ Set：它的取随弹出元素命令可用于抽奖场景、自增自减命令�
 Zset：支持排序，可用于商品销量排序展示、热搜展示
 
 Redis内存查看和设置
-使用config get maxmemory和config set maxmemory查看和设置Redis内存，默认是0,0表示在64为操作系统中不限大小
+使用config get maxmemory和config set maxmemory查看和设置Redis内存，默认是0,0表示在64位操作系统中不限大小
 
 Redis内存淘汰策略设置和查看
 使用config get maxmemory-policy和config set maxmemory-policy查看和设置内存淘汰策略，默认是noeviction策略不删除key，
