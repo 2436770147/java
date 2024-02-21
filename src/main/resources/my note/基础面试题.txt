@@ -57,7 +57,7 @@ redis
 
 mybatis plus特性
 @TableId(type = IdType.AUTO)主键策略、@TableField(fill = FieldFill.INSERT)和@TableField(fill = FieldFill.INSERT_UPDATE)自动填充、
-@Version加乐观锁插件实现乐观锁、@TableLogic逻辑删除、BaseMapper自带curd方法 、QueryWrapper接口实现复杂查询
+@Version加乐观锁插件实现乐观锁、@TableLogic逻辑删除、BaseMapper自带curd方法 、QueryWrapper接口实现复杂查询、防止sql注入
 
 跨域
 访问协议、IP地址、端口号任何一个不一样就会产生跨域
