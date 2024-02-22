@@ -68,7 +68,7 @@ mybatis plus特性
 2、gateway网关+nacos注册中心，添加跨域插件和设置路由
 
 SpringCloud
-nacos注册中心、feign发现服务、gatway网关
+nacos注册中心、feign服务调用、gatway网关
 
 RabbitMQ
 业务层调用rabbitTemplate方法发送消息，监听器@RabbitListener监听到就会执行相关操作
