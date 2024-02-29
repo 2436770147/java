@@ -50,7 +50,8 @@ springboot如何管理版本依赖
 springboot使用maven管理依赖，通过pom文件的父子关系配置定义框架和版本号
 
 什么是自动配置？
-springboot提供了一些框架的默认配置来简化开发，通过在启动类加@SpringBootApplication来实现
+springboot的特点是约定大于配置，通过注解可以省去很多配置文件，通过@SpringBootApplication里的
+自动配置引入选择器类，它指向了当前jar包中META-INF下的spring.factories，里面有一些框架的默认配置
 
 什么是起步依赖？
 就是指pom文件里依赖的starter，里面包含了相关的依赖和配置文件，不需要手动配置
@@ -182,7 +183,7 @@ NIO是相对于传统Stream流更高效的IO操作，ByteBuffer.allocateDirect()
 
 SpringMVC执行原理
 客户端的请求会提交到前端控制器，它会根据请求的URL把请求交给对应的控制器，控制器执行方法后生成ModelAndView对象，
-最后返回给前端控制器
+最后视图解析器渲染之后将结果返回到客户端
 
 Mybatis执行原理
 配置数据库连接信息后，Mybatis通过SqlSessionFactory创建SqlSession，通过SqlSession执行SQL，Mybatis会进行参数映射和
