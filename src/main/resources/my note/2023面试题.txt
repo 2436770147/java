@@ -182,8 +182,8 @@ NIO是相对于传统Stream流更高效的IO操作，ByteBuffer.allocateDirect()
 串行化，事务串行执行，最高的隔离级别，同时解决了脏读、不可重复读和幻读
 
 SpringMVC执行原理
-客户端的请求会提交到前端控制器，它会根据请求的URL把请求交给对应的控制器，控制器执行方法后生成ModelAndView对象，
-最后视图解析器渲染之后将结果返回到客户端
+客户端的请求会提交到前端控制器，前端控制器会调用处理器映射器，处理器映射器根据url找到对应的处理器，
+执行方法后生成ModelAndView，视图解析器解析后返回视图，最后前端控制器渲染视图之后将结果返回到客户端完成请求
 
 Mybatis执行原理
 配置数据库连接信息后，Mybatis通过SqlSessionFactory创建SqlSession，通过SqlSession执行SQL，Mybatis会进行参数映射和
