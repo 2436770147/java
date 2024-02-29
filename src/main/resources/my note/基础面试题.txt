@@ -1,4 +1,15 @@
-﻿SpringMVC执行原理
+﻿BeanFactory和ApplicationContext的区别
+它们都是Spring容器，ApplicationContext继承了BeanFactory，BeanFactory简单的实现了实例化Bean和获取Bean，
+而ApplicationContext增加了AOP、消息响应和访问资源
+
+Spring设计模式有哪些
+1、工厂模式：Spring通过BeanFactory()创建对象
+2、单例模式：Spring默认是单例
+3、代理模式：Spring AOP用到了JDK动态代理和CGLIB字节码生成技术
+4、适配器模式：Spring MVC和Spring AOP都用到了适配器模式
+5、桥接模式：数据库连接
+
+SpringMVC执行原理
 客户端的请求会提交到前端控制器，再由处理器映射器找到处理请求的处理器，执行方法和返回结果模型，
 然后处理视图映射，前端控制器找到指定视图将结果显示到客户端
 
